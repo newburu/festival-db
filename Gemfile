@@ -77,3 +77,6 @@ gem 'html2slim'
 
 # 初期データ
 gem 'seed-fu'
+
+# フォーム作成
+gem 'simple_form'
