@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Festivals
+
+#festivals
+  - @festivals.each do |festival|
+    == render festival
+    p
+      = link_to "Show this festival", festival
+
+= link_to "New festival", new_festival_path
