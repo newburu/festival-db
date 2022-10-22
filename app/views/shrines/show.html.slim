@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+== render @shrine
+
+div
+  => link_to "Edit this shrine", edit_shrine_path(@shrine)
+  '|
+  =< link_to "Back to shrines", shrines_path
+
+  = button_to "Destroy this shrine", @shrine, method: :delete

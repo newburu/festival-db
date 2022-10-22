@@ -1,0 +1,18 @@
+= form_with(model: @shrine) do |form|
+  - if @shrine.errors.any?
+    div style="color: red"
+      h2 = "#{pluralize(@shrine.errors.count, "error")} prohibited this shrine from being saved:"
+      ul
+        - @shrine.errors.each do |error|
+          li = error.full_message
+
+  div
+    = form.label :name, style: "display: block"
+    = form.text_field :name
+
+  div
+    = form.label :address, style: "display: block"
+    = form.text_field :address
+
+  div
+    = form.submit

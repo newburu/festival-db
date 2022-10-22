@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Shrines
+
+#shrines
+  - @shrines.each do |shrine|
+    == render shrine
+    p
+      = link_to "Show this shrine", shrine
+
+= link_to "New shrine", new_shrine_path
