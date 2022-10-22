@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_22_122813) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_22_135549) do
+  create_table "festivals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.bigint "shrine_id", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shrine_id"], name: "index_festivals_on_shrine_id"
+  end
+
   create_table "shrines", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -18,4 +27,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_122813) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "festivals", "shrines"
 end
