@@ -80,3 +80,6 @@ gem 'seed-fu'
 
 # フォーム作成
 gem 'simple_form'
+
+# Bootstrap
+gem 'cssbundling-rails'
