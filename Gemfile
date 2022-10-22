@@ -74,3 +74,6 @@ end
 # Slim
 gem 'slim-rails'
 gem 'html2slim'
+
+# 初期データ
+gem 'seed-fu'
