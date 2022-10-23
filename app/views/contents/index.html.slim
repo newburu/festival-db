@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Contents
+
+#contents
+  - @contents.each do |content|
+    == render content
+    p
+      = link_to "Show this content", content
+
+= link_to "New content", new_content_path

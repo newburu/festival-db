@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contents
   resources :areas
   resources :festivals
   resources :shrines
