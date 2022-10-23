@@ -1,13 +1,13 @@
 div id="#{dom_id content}"
   p
-    strong Name:
+    strong = "#{Content.human_attribute_name(:name)}:"
     =< content.name
   p
-    strong Kind:
+    strong = "#{Content.human_attribute_name(:kind)}:"
     =< content.kind
   p
-    strong Url:
+    strong = "#{Content.human_attribute_name(:url)}:"
     =< content.url
   p
-    strong Detail:
+    strong = "#{Content.human_attribute_name(:detail)}:"
     =< content.detail

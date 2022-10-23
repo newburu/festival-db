@@ -1,10 +1,10 @@
 div id="#{dom_id festival}"
   p
-    strong Name:
+    strong = "#{Festival.human_attribute_name(:name)}:"
     =< festival.name
   p
-    strong Shrine:
-    =< festival.shrine_id
+    strong = "#{Festival.human_attribute_name(:shrine)}:"
+    =< festival.shrine.name
   p
-    strong Content:
+    strong = "#{Festival.human_attribute_name(:content)}:"
     =< festival.content

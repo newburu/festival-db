@@ -3,8 +3,9 @@ p style="color: green" = notice
 == render @area
 
 div
-  => link_to "Edit this area", edit_area_path(@area)
+  => link_to t('labels.edit'), edit_area_path(@area)
   '|
-  =< link_to "Back to areas", areas_path
+  =< link_to t('labels.back.index'), areas_path
 
-  = button_to "Destroy this area", @area, method: :delete
+  = button_to @area, method: :delete, form: { data: { turbo_confirm: t('messages.delete') } }
+    = t('labels.delete')

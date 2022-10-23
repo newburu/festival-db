@@ -1,19 +1,19 @@
 div id="#{dom_id area}"
   p
-    strong Shrine:
-    =< area.shrine_id
+    strong = "#{Area.human_attribute_name(:shrine)}:"
+    =< area.shrine.name
   p
-    strong Name:
+    strong = "#{Area.human_attribute_name(:name)}:"
     =< area.name
   p
-    strong Address:
+    strong = "#{Area.human_attribute_name(:address)}:"
     =< area.address
   p
-    strong Crest:
+    strong = "#{Area.human_attribute_name(:crest)}:"
     =< area.crest
   p
-    strong Color:
+    strong = "#{Area.human_attribute_name(:color)}:"
     =< area.color
   p
-    strong Content:
+    strong = "#{Area.human_attribute_name(:content)}:"
     =< area.content

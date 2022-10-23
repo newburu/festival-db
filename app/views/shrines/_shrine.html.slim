@@ -1,7 +1,10 @@
 div id="#{dom_id shrine}"
   p
-    strong Name:
+    strong = "#{Shrine.human_attribute_name(:name)}:"
     =< shrine.name
   p
-    strong Address:
+    strong = "#{Shrine.human_attribute_name(:address)}:"
     =< shrine.address
+  p
+    strong = "#{Shrine.human_attribute_name(:content)}:"
+    =< shrine.content

@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      area: '祭礼地域'
+    attributes:
+      area:
+        shrine: '神社'
+        name: '名前'
+        address: '行政区域'
+        crest: '紋'
+        color: 'シデの色'
+        content: '詳細'
+  simple_form:
+    labels:
+      area:
+        shrine: '神社'
+        name: '名前'
+        address: '行政区域'
+        crest: '紋'
+        color: 'シデの色'
+        content: '詳細'
+  areas:
+    index:
+      title: '祭礼地域一覧'
+    edit:
+      title: '祭礼地域'
+    new:
+      title: '祭礼地域を登録する'

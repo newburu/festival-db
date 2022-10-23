@@ -3,8 +3,9 @@ p style="color: green" = notice
 == render @content
 
 div
-  => link_to "Edit this content", edit_content_path(@content)
+  => link_to t('labels.edit'), edit_content_path(@content)
   '|
-  =< link_to "Back to contents", contents_path
+  =< link_to t('labels.back.index'), contents_path
 
-  = button_to "Destroy this content", @content, method: :delete
+  = button_to @content, method: :delete, form: { data: { turbo_confirm: t('messages.delete') } }
+    = t('labels.delete')
