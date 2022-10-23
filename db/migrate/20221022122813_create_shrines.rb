@@ -3,6 +3,7 @@ class CreateShrines < ActiveRecord::Migration[7.0]
     create_table :shrines do |t|
       t.string :name
       t.string :address
+      t.text :content
 
       t.timestamps
     end
