@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Areas
+
+#areas
+  - @areas.each do |area|
+    == render area
+    p
+      = link_to "Show this area", area
+
+= link_to "New area", new_area_path
