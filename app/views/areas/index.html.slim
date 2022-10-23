@@ -2,10 +2,28 @@ p style="color: green" = notice
 
 h1 Areas
 
+= search_form_for @q do |f|
+  = f.text_field :name_cont
+  = f.submit
+
+hr
+
 #areas
-  - @areas.each do |area|
-    == render area
-    p
-      = link_to "Show this area", area
+  table
+    thead
+      tr
+        th
+          | Name
+        th
+    tbody
+      - @areas.each do |area|
+        tr
+          td
+            = link_to area.name, edit_area_path(area)
+          td
+            = button_to area, method: :delete, form: { data: { turbo_confirm: '削除しますか？' } }
+              = "削除"
+
+hr
 
 = link_to "New area", new_area_path
