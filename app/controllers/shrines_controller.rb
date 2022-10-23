@@ -3,7 +3,8 @@ class ShrinesController < ApplicationController
 
   # GET /shrines or /shrines.json
   def index
-    @shrines = Shrine.all
+    @q = Shrine.ransack(params[:q])
+    @shrines = @q.result
   end
 
   # GET /shrines/1 or /shrines/1.json
