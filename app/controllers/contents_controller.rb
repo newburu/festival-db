@@ -3,7 +3,8 @@ class ContentsController < ApplicationController
 
   # GET /contents or /contents.json
   def index
-    @contents = Content.all
+    @q = Content.ransack(params[:q])
+    @contents = @q.result
   end
 
   # GET /contents/1 or /contents/1.json
