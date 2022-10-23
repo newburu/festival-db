@@ -2,10 +2,28 @@ p style="color: green" = notice
 
 h1 Shrines
 
+= search_form_for @q do |f|
+  = f.text_field :name_cont
+  = f.submit
+
+hr
+
 #shrines
-  - @shrines.each do |shrine|
-    == render shrine
-    p
-      = link_to "Show this shrine", shrine
+  table
+    thead
+      tr
+        th
+          | Name
+        th
+    tbody
+      - @shrines.each do |shrine|
+        tr
+          td
+            = link_to shrine.name, edit_shrine_path(shrine)
+          td
+            = button_to shrine, method: :delete, form: { data: { turbo_confirm: '削除しますか？' } }
+              = "削除"
+
+hr
 
 = link_to "New shrine", new_shrine_path

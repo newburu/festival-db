@@ -3,7 +3,8 @@ class AreasController < ApplicationController
 
   # GET /areas or /areas.json
   def index
-    @areas = Area.all
+    @q = Area.ransack(params[:q])
+    @areas = @q.result
   end
 
   # GET /areas/1 or /areas/1.json

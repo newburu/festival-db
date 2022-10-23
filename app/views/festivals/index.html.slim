@@ -2,10 +2,28 @@ p style="color: green" = notice
 
 h1 Festivals
 
+= search_form_for @q do |f|
+  = f.text_field :name_cont
+  = f.submit
+
+hr
+
 #festivals
-  - @festivals.each do |festival|
-    == render festival
-    p
-      = link_to "Show this festival", festival
+  table
+    thead
+      tr
+        th
+          | Name
+        th
+    tbody
+      - @festivals.each do |festival|
+        tr
+          td
+            = link_to festival.name, edit_festival_path(festival)
+          td
+            = button_to festival, method: :delete, form: { data: { turbo_confirm: '削除しますか？' } }
+              = "削除"
+
+hr
 
 = link_to "New festival", new_festival_path

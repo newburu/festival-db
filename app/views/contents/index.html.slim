@@ -2,10 +2,28 @@ p style="color: green" = notice
 
 h1 Contents
 
+= search_form_for @q do |f|
+  = f.text_field :name_cont
+  = f.submit
+
+hr
+
 #contents
-  - @contents.each do |content|
-    == render content
-    p
-      = link_to "Show this content", content
+  table
+    thead
+      tr
+        th
+          | Name
+        th
+    tbody
+      - @contents.each do |content|
+        tr
+          td
+            = link_to content.name, edit_content_path(content)
+          td
+            = button_to content, method: :delete, form: { data: { turbo_confirm: '削除しますか？' } }
+              = "削除"
+
+hr
 
 = link_to "New content", new_content_path

@@ -3,7 +3,8 @@ class FestivalsController < ApplicationController
 
   # GET /festivals or /festivals.json
   def index
-    @festivals = Festival.all
+    @q = Festival.ransack(params[:q])
+    @festivals = @q.result
   end
 
   # GET /festivals/1 or /festivals/1.json

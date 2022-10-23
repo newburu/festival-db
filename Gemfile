@@ -86,3 +86,6 @@ gem 'cssbundling-rails'
 
 # Enum
 gem 'enumerize'
+
+# 検索
+gem 'ransack'
