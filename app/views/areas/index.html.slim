@@ -1,6 +1,6 @@
 p style="color: green" = notice
 
-h1 Areas
+h1 = t('.title')
 
 = search_form_for @q do |f|
   = f.text_field :name_cont
@@ -13,7 +13,7 @@ hr
     thead
       tr
         th
-          | Name
+          = Area.human_attribute_name(:name)
         th
     tbody
       - @areas.each do |area|
@@ -21,9 +21,9 @@ hr
           td
             = link_to area.name, edit_area_path(area)
           td
-            = button_to area, method: :delete, form: { data: { turbo_confirm: '削除しますか？' } }
-              = "削除"
+            = button_to area, method: :delete, form: { data: { turbo_confirm: t('messages.delete') } }
+              = t('labels.delete')
 
 hr
 
-= link_to "New area", new_area_path
+= link_to t('labels.new'), new_area_path

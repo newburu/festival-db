@@ -1,10 +1,10 @@
-h1 Editing area
+h1 = t('.title')
 
 == render "form", area: @area
 
 br
 
 div
-  => link_to "Show this area", @area
+  => link_to t('labels.show'), @area
   '|
-  =< link_to "Back to areas", areas_path
+  =< link_to t('labels.back.index'), areas_path

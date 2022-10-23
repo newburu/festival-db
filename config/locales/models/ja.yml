@@ -4,3 +4,12 @@ ja:
       kind:
         youtube: YouTube
         instagram: Instagram
+  messages:
+    delete: '削除しますか？'
+  labels:
+    new: '新規作成'
+    delete: '削除'
+    edit: '変更'
+    show: '参照'
+    back:
+      index: '一覧に戻る'
