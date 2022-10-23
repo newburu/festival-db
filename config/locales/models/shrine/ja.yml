@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    models:
+      shrine: '神社'
+    attributes:
+      shrine:
+        name: '名前'
+        address: '住所'
+        content: '詳細'
+  simple_form:
+    labels:
+      shrine:
+        name: '名前'
+        address: '住所'
+        content: '詳細'
+  shrines:
+    index:
+      title: '神社一覧'
+    edit:
+      title: '神社'
+    new:
+      title: '神社を登録する'
