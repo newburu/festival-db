@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      festival: '祭り'
+    attributes:
+      festival:
+        name: '名前'
+        shrine: '神社'
+        url: 'URL'
+        content: '詳細'
+  simple_form:
+    labels:
+      festival:
+        name: '名前'
+        shrine: '神社'
+        content: '詳細'
+  festivals:
+    index:
+      title: '祭り一覧'
+    edit:
+      title: '祭り'
+    new:
+      title: '祭りを登録する'

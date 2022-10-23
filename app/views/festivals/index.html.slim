@@ -1,6 +1,6 @@
 p style="color: green" = notice
 
-h1 Festivals
+h1 = t('.title')
 
 = search_form_for @q do |f|
   = f.text_field :name_cont
@@ -13,7 +13,7 @@ hr
     thead
       tr
         th
-          | Name
+          = Festival.human_attribute_name(:name)
         th
     tbody
       - @festivals.each do |festival|
@@ -21,9 +21,9 @@ hr
           td
             = link_to festival.name, edit_festival_path(festival)
           td
-            = button_to festival, method: :delete, form: { data: { turbo_confirm: '削除しますか？' } }
-              = "削除"
+            = button_to festival, method: :delete, form: { data: { turbo_confirm: t('messages.delete') } }
+              = t('labels.delete')
 
 hr
 
-= link_to "New festival", new_festival_path
+= link_to t('labels.new'), new_festival_path

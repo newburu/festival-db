@@ -10,7 +10,7 @@
     = form.input :name
 
   div
-    = form.input :shrine, as: :select, collection: Shrine.all
+    = form.association :shrine
 
   div
     = form.input :content

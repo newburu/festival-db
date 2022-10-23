@@ -1,10 +1,10 @@
-h1 Editing festival
+h1 = t('.title')
 
 == render "form", festival: @festival
 
 br
 
 div
-  => link_to "Show this festival", @festival
+  => link_to t('labels.show'), @festival
   '|
-  =< link_to "Back to festivals", festivals_path
+  =< link_to t('labels.back.index'), festivals_path

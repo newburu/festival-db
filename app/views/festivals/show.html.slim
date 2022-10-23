@@ -3,8 +3,9 @@ p style="color: green" = notice
 == render @festival
 
 div
-  => link_to "Edit this festival", edit_festival_path(@festival)
+  => link_to t('labels.edit'), edit_festival_path(@festival)
   '|
-  =< link_to "Back to festivals", festivals_path
+  =< link_to t('labels.back.index'), festivals_path
 
-  = button_to "Destroy this festival", @festival, method: :delete
+  = button_to @festival, method: :delete, form: { data: { turbo_confirm: t('messages.delete') } }
+    = t('labels.delete')
