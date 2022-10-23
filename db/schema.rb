@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_23_011049) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_23_013320) do
   create_table "areas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "shrine_id", null: false
     t.string "name"
@@ -21,6 +21,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_23_011049) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shrine_id"], name: "index_areas_on_shrine_id"
+  end
+
+  create_table "contents", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "kind"
+    t.string "url"
+    t.text "detail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "festivals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

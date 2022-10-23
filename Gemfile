@@ -83,3 +83,6 @@ gem 'simple_form'
 
 # Bootstrap
 gem 'cssbundling-rails'
+
+# Enum
+gem 'enumerize'
