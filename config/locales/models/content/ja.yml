@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      content: 'コンテンツ'
+    attributes:
+      content:
+        name: '名前'
+        kind: '種類'
+        url: 'URL'
+        detail: '詳細'
+  simple_form:
+    labels:
+      content:
+        name: '名前'
+        kind: '種類'
+        url: 'URL'
+        detail: '詳細'
+  contents:
+    index:
+      title: 'コンテンツ一覧'
+    edit:
+      title: 'コンテンツ'
+    new:
+      title: 'コンテンツを登録する'
