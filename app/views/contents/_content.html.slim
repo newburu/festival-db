@@ -8,6 +8,11 @@ div id="#{dom_id content}"
   p
     strong = "#{Content.human_attribute_name(:url)}:"
     =< content.url
+
+  p
+    strong = "#{t('labels.hashtags')}:"
+    =< render_with_hashtags(@content.hashtags)
+
   p
     strong = "#{Content.human_attribute_name(:detail)}:"
     =< content.detail

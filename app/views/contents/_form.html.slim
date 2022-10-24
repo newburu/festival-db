@@ -6,6 +6,11 @@
     = f.input :name
     = f.input :kind
     = f.input :url
+    .form-group
+      label
+        = t('labels.hashtags')
+      .form-control
+        = render_with_hashtags(@content.hashtags)
     = f.input :detail
 
   .form-actions
