@@ -92,3 +92,9 @@ gem 'ransack'
 
 # i18n
 gem 'rails-i18n'
+
+# Google(YouTube) API
+gem 'google-api-client'
+
+# 環境変数
+gem 'dotenv-rails'
