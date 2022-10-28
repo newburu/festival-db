@@ -3,7 +3,8 @@ p style="color: green" = notice
 h1 = t('.title')
 
 = search_form_for @q do |f|
-  = f.text_field :name_cont
+  = f.input :name_cont
+  = f.input :shrine_id_eq, as: :select, collection: Shrine.all
   = f.submit
 
 hr
