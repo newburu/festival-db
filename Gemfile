@@ -92,6 +92,7 @@ gem 'ransack'
 
 # i18n
 gem 'rails-i18n'
+gem 'i18n-debug'
 
 # Google(YouTube) API
 gem 'google-api-client'
