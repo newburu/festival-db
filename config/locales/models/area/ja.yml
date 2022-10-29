@@ -19,9 +19,6 @@ ja:
         crest: '紋'
         color: 'シデの色'
         content: '詳細'
-      q:
-        shrine_id_eq: '神社'
-        name_cont: '名前'
   areas:
     index:
       title: '祭礼地域一覧'
