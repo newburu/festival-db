@@ -4,7 +4,7 @@ class ContentsController < ApplicationController
   # GET /contents or /contents.json
   def index
     @q = Content.ransack(params[:q])
-    @contents = @q.result
+    @pagy, @contents = pagy @q.result(distinct: true).order('created_at DESC')
   end
 
   # GET /contents/1 or /contents/1.json
