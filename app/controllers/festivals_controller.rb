@@ -4,7 +4,7 @@ class FestivalsController < ApplicationController
   # GET /festivals or /festivals.json
   def index
     @q = Festival.ransack(params[:q])
-    @festivals = @q.result
+    @pagy, @festivals = pagy @q.result(distinct: true).order('created_at DESC')
   end
 
   # GET /festivals/1 or /festivals/1.json

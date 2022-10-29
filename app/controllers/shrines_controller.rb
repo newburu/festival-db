@@ -4,7 +4,7 @@ class ShrinesController < ApplicationController
   # GET /shrines or /shrines.json
   def index
     @q = Shrine.ransack(params[:q])
-    @shrines = @q.result
+    @pagy, @shrines = pagy @q.result(distinct: true).order('created_at DESC')
   end
 
   # GET /shrines/1 or /shrines/1.json
