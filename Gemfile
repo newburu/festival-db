@@ -89,6 +89,7 @@ gem 'enumerize'
 
 # 検索
 gem 'ransack'
+gem 'pagy'
 
 # i18n
 gem 'rails-i18n'
