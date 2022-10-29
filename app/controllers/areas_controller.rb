@@ -4,7 +4,7 @@ class AreasController < ApplicationController
   # GET /areas or /areas.json
   def index
     @q = Area.ransack(params[:q])
-    @areas = @q.result
+    @pagy, @areas = pagy @q.result(distinct: true).order('created_at DESC')
   end
 
   # GET /areas/1 or /areas/1.json
