@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_23_080257) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_29_134017) do
   create_table "areas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "shrine_id", null: false
     t.string "name"
@@ -21,6 +21,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_23_080257) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shrine_id"], name: "index_areas_on_shrine_id"
+  end
+
+  create_table "content_areas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "content_id", null: false
+    t.bigint "area_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_content_areas_on_area_id"
+    t.index ["content_id"], name: "index_content_areas_on_content_id"
+  end
+
+  create_table "content_festivals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "content_id", null: false
+    t.bigint "festival_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_id"], name: "index_content_festivals_on_content_id"
+    t.index ["festival_id"], name: "index_content_festivals_on_festival_id"
   end
 
   create_table "content_hashtags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -66,6 +84,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_23_080257) do
   end
 
   add_foreign_key "areas", "shrines"
+  add_foreign_key "content_areas", "areas"
+  add_foreign_key "content_areas", "contents"
+  add_foreign_key "content_festivals", "contents"
+  add_foreign_key "content_festivals", "festivals"
   add_foreign_key "content_hashtags", "contents"
   add_foreign_key "content_hashtags", "hashtags"
   add_foreign_key "festivals", "shrines"
