@@ -9,20 +9,8 @@ h1 = t('.title')
 hr
 
 #contents
-  table
-    thead
-      tr
-        th
-          = Content.human_attribute_name(:name)
-        th
-    tbody
-      - @contents.each do |content|
-        tr
-          td
-            = link_to content.name, edit_content_path(content)
-          td
-            = button_to content, method: :delete, form: { data: { turbo_confirm: t('messages.delete') } }
-              = t('labels.delete')
+  - @contents.each do |content|
+    == render "panel_content", content: content
 
 hr
 

@@ -8,7 +8,7 @@ html
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
-  body
+  body.container
     = render template:'layouts/header'
     = yield
     = render template:'layouts/footer'
