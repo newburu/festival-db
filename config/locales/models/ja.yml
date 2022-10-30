@@ -20,6 +20,6 @@ ja:
       q:
         shrine_id_eq: '神社'
         name_cont: '名前'
-        festivals_shrine_id_in: '神社'
+        shrines_id_in: '神社'
         festivals_id_in: '祭り'
         areas_id_in: '祭礼地域'
