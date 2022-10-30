@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_29_134017) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_30_030237) do
   create_table "areas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "shrine_id", null: false
     t.string "name"
@@ -48,6 +48,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_29_134017) do
     t.datetime "updated_at", null: false
     t.index ["content_id"], name: "index_content_hashtags_on_content_id"
     t.index ["hashtag_id"], name: "index_content_hashtags_on_hashtag_id"
+  end
+
+  create_table "content_shrines", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "content_id", null: false
+    t.bigint "shrine_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_id"], name: "index_content_shrines_on_content_id"
+    t.index ["shrine_id"], name: "index_content_shrines_on_shrine_id"
   end
 
   create_table "contents", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -90,5 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_29_134017) do
   add_foreign_key "content_festivals", "festivals"
   add_foreign_key "content_hashtags", "contents"
   add_foreign_key "content_hashtags", "hashtags"
+  add_foreign_key "content_shrines", "contents"
+  add_foreign_key "content_shrines", "shrines"
   add_foreign_key "festivals", "shrines"
 end
