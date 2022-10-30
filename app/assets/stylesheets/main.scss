@@ -1,0 +1,41 @@
+#contents {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.panel {
+    width: 33%;
+    margin: 0.5em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+
+.panel:before,
+.panel:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+
+.panel:before {
+    left: 10px;
+}
+
+.panel:after {
+    right: 10px;
+}
+
+.panel p {
+    margin: 0;
+    padding: 0;
+}
+
+.panel>iframe {
+    width: 100%;
+}

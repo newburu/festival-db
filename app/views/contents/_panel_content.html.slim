@@ -1,0 +1,7 @@
+.panel
+	.panel-header
+	.panel-body
+    = content_tag 'iframe', nil, src: "https://www.youtube.com/embed/#{content.url[32..42]}", \
+      frameborder: 0, gesture: 'media', allow: 'encrypted-media', allowfullscreen: true
+	.panel-footer
+		= link_to content.name, edit_content_path(content)
