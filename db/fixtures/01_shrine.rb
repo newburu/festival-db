@@ -6,7 +6,7 @@ Shrine.seed(
   },
   {
     id: 2,
-    name: '浜之宮天満宮',
+    name: '浜の宮天満宮',
     address: '姫路市飾磨区須加40',
   },
   {
@@ -33,5 +33,10 @@ Shrine.seed(
     id: 7,
     name: '富嶋神社',
     address: 'たつの市御津町苅屋519',
+  },
+  {
+    id: 8,
+    name: '荒川神社',
+    address: '姫路市井ノ口437',
   },
 )

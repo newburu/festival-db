@@ -14,11 +14,15 @@ hr
     thead
       tr
         th
+          = Area.human_attribute_name(:shrine)
+        th
           = Area.human_attribute_name(:name)
         th
     tbody
       - @areas.each do |area|
         tr
+          td
+            = area.shrine.name
           td
             = link_to area.name, edit_area_path(area)
           td
