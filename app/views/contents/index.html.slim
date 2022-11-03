@@ -4,7 +4,7 @@ h1 = t('.title')
 
 = search_form_for @q do |f|
   = f.input :name_cont
-  = f.input :festivals_shrine_id_in, as: :select, collection: Shrine.all
+  = f.input :shrines_id_in, as: :select, collection: Shrine.all
   = f.input :festivals_id_in, as: :select, collection: Festival.all
   = f.input :areas_id_in, as: :select, collection: Area.all
   = f.submit
