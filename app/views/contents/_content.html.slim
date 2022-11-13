@@ -6,8 +6,8 @@ div id="#{dom_id content}"
     strong = "#{Content.human_attribute_name(:kind)}:"
     =< content.kind
   p
-    strong = "#{Content.human_attribute_name(:url)}:"
-    =< content.url
+    strong = "#{Content.human_attribute_name(:path)}:"
+    =< content.path
 
   p
     strong = "#{t('labels.hashtags')}:"
