@@ -8,8 +8,8 @@ namespace :regist_contents do
     results.items.each do |item|
       id = item.id
       snippet = item.snippet
-      url = "https://www.youtube.com/watch?v=#{id.video_id}"
-      content = Content.find_or_initialize_by(url: url)
+      path = "https://www.youtube.com/watch?v=#{id.video_id}"
+      content = Content.find_or_initialize_by(path: path)
       content.kind = :youtube
       content.name = snippet.title
       content.detail = "#{snippet.title} by #{snippet.channel_title} (id: #{id.video_id}) (#{snippet.published_at})"

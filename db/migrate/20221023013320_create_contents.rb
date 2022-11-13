@@ -3,7 +3,7 @@ class CreateContents < ActiveRecord::Migration[7.0]
     create_table :contents do |t|
       t.string :name
       t.string :kind
-      t.string :url
+      t.string :path
       t.text :detail
 
       t.timestamps

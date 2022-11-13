@@ -17,7 +17,7 @@ class ContentsTest < ApplicationSystemTestCase
     fill_in "Detail", with: @content.detail
     fill_in "Kind", with: @content.kind
     fill_in "Name", with: @content.name
-    fill_in "Url", with: @content.url
+    fill_in "Path", with: @content.path
     click_on "Create Content"
 
     assert_text "Content was successfully created"
@@ -31,7 +31,7 @@ class ContentsTest < ApplicationSystemTestCase
     fill_in "Detail", with: @content.detail
     fill_in "Kind", with: @content.kind
     fill_in "Name", with: @content.name
-    fill_in "Url", with: @content.url
+    fill_in "Path", with: @content.path
     click_on "Update Content"
 
     assert_text "Content was successfully updated"
