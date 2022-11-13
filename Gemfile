@@ -102,3 +102,6 @@ gem 'google-api-client'
 
 # 環境変数
 gem 'dotenv-rails'
+
+# CORS設定
+gem 'rack-cors'
