@@ -8,6 +8,9 @@ div id="#{dom_id content}"
   p
     strong = "#{Content.human_attribute_name(:path)}:"
     =< content.path
+  p
+    strong = "#{Content.human_attribute_name(:key)}:"
+    =< content.key
 
   p
     strong = "#{t('labels.hashtags')}:"

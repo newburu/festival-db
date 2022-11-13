@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_030237) do
     t.string "name"
     t.string "kind"
     t.string "path"
+    t.string "key"
     t.text "detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
