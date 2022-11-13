@@ -14,6 +14,12 @@ class Content < ApplicationRecord
   has_many :content_areas, dependent: :destroy
   has_many :areas, through: :content_areas
 
+  before_save :make_key
+  def make_key
+    if self.kind == "youtube"
+      self.key = self.path[32..42]
+    end
+  end
 
   after_create :make_references
   before_update :make_references
