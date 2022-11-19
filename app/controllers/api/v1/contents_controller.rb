@@ -7,7 +7,7 @@ module Api
         q[:name_cont] = params[:name]
         q[:detail_cont] = params[:detail]
         q[:kind_eq] = :youtube
-        @contents = Content.ransack(q).result(distinct: true).order('created_at DESC')
+        @pagy, @contents = pagy(Content.ransack(q).result(distinct: true).order('created_at DESC'), items: params[:items], page: params[:page])
       end
     end
   end
